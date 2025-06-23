@@ -1,0 +1,34 @@
+name: Workflow 2 Jobs
+
+on: [push]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "workflow 2 job 1"
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Print message
+        run: echo "workflow 2 job 2"
+  job3:
+    runs-on: ubuntu-latest
+    needs: job2
+    steps:
+      - name: Print message
+        run: echo "workflow 2 job 3"
+  job4:
+    runs-on: ubuntu-latest
+    needs: job3
+    steps:
+      - name: Print message
+        run: echo "workflow 2 job 4"
+  job5:
+    runs-on: ubuntu-latest
+    needs: job4
+    steps:
+      - name: Print message
+        run: echo "workflow 2 job 5"
